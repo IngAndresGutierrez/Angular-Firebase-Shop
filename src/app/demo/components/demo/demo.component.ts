@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  selector: "app-demo",
+  templateUrl: "./demo.component.html",
+  styleUrls: ["./demo.component.scss"]
 })
 export class DemoComponent implements OnInit {
+  title = "angular-store";
 
-  title = 'platzi-store';
-
-  items = ['nicolas', 'julian', 'perez'];
+  items = ["nicolas", "julian", "perez"];
 
   objeto = {};
 
@@ -20,13 +19,10 @@ export class DemoComponent implements OnInit {
   }
 
   addItem() {
-    this.items.push('nuevo item');
+    this.items.push("nuevo item");
   }
 
   deleteItem(index: number) {
     this.items.splice(index, 1);
   }
-
-
-
 }
