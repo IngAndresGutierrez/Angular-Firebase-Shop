@@ -22,7 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
@@ -74,7 +74,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": false,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": false,
@@ -154,5 +153,8 @@
       }
     }
   },
-  "defaultProject": "angular-store"
+  "defaultProject": "angular-store",
+  "cli": {
+    "analytics": "f56ad2b8-2cf0-4cfe-b7c1-472bacb53f34"
+  }
 }
