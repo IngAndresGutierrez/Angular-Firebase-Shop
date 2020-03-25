@@ -15,7 +15,6 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit() {
     this.fetchProducts();
-    this.getRandomUsers();
   }
 
   fetchProducts() {
@@ -27,12 +26,6 @@ export class ProductsListComponent implements OnInit {
   deleteProduct(id: string) {
     this.productsService.deleteProduct(id).subscribe(rta => {
       this.fetchProducts();
-    });
-  }
-
-  getRandomUsers() {
-    this.productsService.getRandomUsers().subscribe(users => {
-      console.log(users);
     });
   }
 }

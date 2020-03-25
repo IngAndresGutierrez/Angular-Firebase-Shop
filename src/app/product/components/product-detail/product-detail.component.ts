@@ -5,6 +5,7 @@ import { switchMap } from "rxjs/operators";
 import { ProductsService } from "@core/services/products/products.service";
 import { Product } from "@core/models/product.model";
 import { Observable } from "rxjs";
+import * as FileSaver from "file-saver";
 
 @Component({
   selector: "app-product-detail",
@@ -25,6 +26,9 @@ export class ProductDetailComponent implements OnInit {
         return this.productsService.getProduct(params.id);
       })
     );
+
+    this.getRandomUsers();
+    //this.getFile(); Download file from Browser
   }
 
   createProduct() {
@@ -55,6 +59,25 @@ export class ProductDetailComponent implements OnInit {
   deleteProduct() {
     this.productsService.deleteProduct("222").subscribe(rta => {
       console.log(rta);
+    });
+  }
+
+  getRandomUsers() {
+    this.productsService.getRandomUsers().subscribe(
+      users => {
+        console.log(users);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getFile() {
+    this.productsService.getFile().subscribe(content => {
+      console.log(content);
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      FileSaver.saveAs(blob, "hello world.txt");
     });
   }
 }
