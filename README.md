@@ -1,5 +1,7 @@
 # AngularStore
 
+![Captura de la App](./.readme-static/store-angular-home.png)
+
 ### Based on course of basic Angular of platzi.com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
